@@ -79,6 +79,7 @@ export interface ZabbixQueryOptions {
   minSeverity?: number;
   sortProblems?: string;
   acknowledged?: number;
+  tagEvalType?: number;
   hostsInMaintenance?: boolean;
   hostProxy?: boolean;
   limit?: number;

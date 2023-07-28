@@ -20,6 +20,11 @@ const ackOptions: Array<SelectableValue<number>> = [
   { label: 'acknowledged', value: 1 },
 ];
 
+const tagEvalTypeOptions: Array<SelectableValue<number>> = [
+  { label: 'And/Or', value: 0 },
+  { label: 'Or', value: 2 },
+];
+
 const sortOptions: Array<SelectableValue<string>> = [
   { label: 'Default', value: 'default' },
   { label: 'Last change', value: 'lastchange' },
@@ -153,6 +158,15 @@ export const QueryOptionsEditor = ({ queryType, queryOptions, onChange }: Props)
             value={queryOptions.acknowledged}
             options={ackOptions}
             onChange={onPropChange('acknowledged')}
+          />
+        </InlineField>
+	<InlineField label="Tag Eval Type" labelWidth={24}>
+          <Select
+            isSearchable={false}
+            width={24}
+            value={queryOptions.tagEvalType}
+            options={tagEvalTypeOptions}
+            onChange={onPropChange('tagEvalType')}
           />
         </InlineField>
         <InlineField label="Sort by" labelWidth={24}>
